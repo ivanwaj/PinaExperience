@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mediodía - Pina Experience</title>
+    <link rel="icon" type="image/jpeg" href="img/logo.jpg">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            corePlugins: { preflight: false },
+            theme: {
+                extend: {
+                    colors: {
+                        primario: "var(--pino)",
+                        secundario: "var(--verde)",
+                        terciario: "var(--lima)"
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="contenedor">
+            <a href="index.html"><img src="img/logo.jpg" alt="Logo de Pina Experience" class="logo"></a>
+            <nav>
+                <button type="button" id="boton-menu" aria-expanded="false" aria-controls="menu" class="md:hidden cursor-pointer px-4 py-2 font-semibold text-base text-primario bg-transparent border-2 border-solid border-primario">Menú</button>
+                <ul id="menu" class="menu flex hidden md:flex">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="manana.html">Mañana</a></li>
+                    <li><a href="mediodia.html" class="actual">Mediodía</a></li>
+                    <li><a href="atardecer.html">Atardecer</a></li>
+                    <li><a href="noche.html">Noche</a></li>
+                    <li><a href="index.html#reserva">Reservar</a></li>
+                    <li><a href="index.html#ayuda">Contacto/Ayuda</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="secciones">
+        <h1>Mediodía</h1>
+        <p class="momento">Parada 2: paradores y médanos de La Frontera</p>
+
+        <section class="intro-parada">
+            <div class="introduccion">
+                <p>
+                    El mediodía es el momento con más sol y más gente en la playa. En verano el calor se siente fuerte, las familias ya tienen armada la sombrilla y los paradores se llenan de gente que va a almorzar sin tener que irse de la arena.
+                </p>
+                <p>
+                    Es buena hora para comer algo rico frente al mar y después buscar un plan con más movimiento. Nosotros proponemos dos cosas: almorzar en un parador y después ir a La Frontera, al norte de la ciudad, donde están los médanos más grandes.
+                </p>
+            </div>
+            <div class="caja resumen-parada">
+                <h3>En esta parada</h3>
+                <ul>
+                    <li><strong>Horario sugerido:</strong> 12 a 16 h</li>
+                    <li><strong>Duración:</strong> 2 a 3 horas</li>
+                    <li><strong>Costo:</strong> caminar es gratis, el sandboard se paga</li>
+                    <li><strong>Para quién:</strong> los que buscan un poco de adrenalina</li>
+                    <li><strong>Qué llevar:</strong> agua, gorra y anteojos de sol</li>
+                </ul>
+            </div>
+        </section>
+
+        <article>
+            <img src="img/parador.jpg" alt="Un parador de madera verde en la playa" class="foto">
+            <div class="parrafo">
+                <p>
+                    Después de la mañana en el mar toca comer. A lo largo de toda la costa hay paradores, en Pinamar,
+                    Ostende, Valeria del Mar y Cariló. Hay para todos los gustos: minutas, licuados, pescado fresco y
+                    algunos lugares con cocina de autor a la orilla del mar.
+                </p>
+                <p>
+                    La mayoría de los paradores tiene mesas en la arena o en un deck de madera, con sombra para escaparle al sol del mediodía. Algunos también alquilan carpas y sombrillas por el día, así que es fácil quedarse un buen rato.
+                </p>
+                <p>
+                    Si vas con chicos, lo más práctico es elegir uno cerca de donde estás en la playa, así no hay que caminar mucho con el calor. Si vas con amigos, hay paradores con música y un ambiente más de juntada.
+                </p>
+                <p>
+                    Un consejo: en temporada alta, los fines de semana se llenan rápido al mediodía. Si querés comer tranquilo, conviene ir un poco antes de la una o después de las tres.
+                </p>
+            </div>
+        </article>
+
+        <article class="invertido">
+            <img src="img/medanosnublado.jpg" alt="Médanos grandes con el cielo nublado" class="foto">
+            <div class="parrafo">
+                <p>
+                    Con la panza llena, el recorrido sigue al norte, a La Frontera. Son unos siete kilómetros de playa
+                    y médanos, a casi ocho kilómetros del centro. Los médanos más grandes están cerca de la ruta y
+                    llegan a medir 40 metros.
+                </p>
+                <p>
+                    Es la parada con más adrenalina del día y también la que tiene la mejor vista. Eso sí, es un lugar
+                    natural y hay que cuidarlo.
+                </p>
+                <p>
+                    Arriba de los médanos se ve todo: el mar para un lado, el bosque para el otro y la ciudad a lo lejos. Es uno de los mejores lugares de la zona para sacar fotos, sobre todo cuando el sol empieza a bajar.
+                </p>
+                <p>
+                    Se puede caminar por la arena sin pagar nada o hacer sandboard con una tabla alquilada. Subir cansa más de lo que parece, así que conviene tomarlo con calma y llevar agua.
+                </p>
+            </div>
+        </article>
+
+        <p class="aviso">
+            <strong>Atención:</strong> desde febrero de 2026 no se puede andar con vehículos por los médanos por una
+            medida judicial. El municipio tiene que probar un sistema de seguridad nuevo antes de la próxima
+            temporada. Antes de ir, consultá en la Secretaría de Turismo si ya está habilitado.
+        </p>
+
+        <p>
+            Para llegar a La Frontera hay que ir hacia el norte de la ciudad. Desde la playa norte se puede seguir caminando por la arena, pero es bastante lejos (casi ocho kilómetros desde el centro), así que la mayoría va en auto hasta la zona y después sigue a pie.
+        </p>
+        <p>
+            Una vez ahí el paisaje cambia por completo: casi no hay casas, la playa es más ancha y los médanos se ven enormes. Es un buen lugar para quedarse un rato, sacar fotos y mirar el mar desde arriba.
+        </p>
+
+        <div class="dato">
+            <p>Los médanos más grandes llegan a los 40 metros. Subirlos cansa más de lo que parece.</p>
+        </div>
+        <h2>Qué hacer</h2>
+        <div class="flex flex-wrap gap-3">
+            <button id="boton-familia" class="pestana elegido font-semibold px-6 py-3 cursor-pointer text-base">En familia</button>
+            <button id="boton-amigos" class="pestana font-semibold px-6 py-3 cursor-pointer text-base">Con amigos</button>
+        </div>
+
+        <div id="familia" class="cajas actividades mostrar mt-6">
+            <div class="caja">
+                <h3>Caminar por los médanos</h3>
+                <p>
+                    Se llega a pie desde la playa norte y no se paga nada. Desde arriba se sacan las mejores fotos del
+                    día, con el mar de fondo.
+                </p>
+            </div>
+        </div>
+
+        <div id="amigos" class="cajas actividades mt-6">
+            <div class="caja">
+                <h3>Sandboard</h3>
+                <p>
+                    Es bajar los médanos arriba de una tabla. Hay pendientes de 18 a 30 grados y pistas de hasta 90
+                    metros. La tabla se alquila ahí mismo.
+                </p>
+            </div>
+            <div class="caja">
+                <h3>Excursiones en 4x4</h3>
+                <p>
+                    También hay paseos en 4x4, camión, cuatriciclo o UTV, siempre con guía. Solo se pueden hacer si el
+                    municipio los habilita esa temporada.
+                </p>
+            </div>
+        </div>
+
+        <p>
+            Si es tu primera vez haciendo sandboard, empezá por un médano chico y bajá sentado. Parece fácil, pero la tabla agarra velocidad rápido. Cuando le agarres la mano podés probar parado o en las pistas más largas.
+        </p>
+        <h2>Qué se paga y qué no</h2>
+        <div class="tabla">
+            <table>
+                <tr>
+                    <th>Actividad</th>
+                    <th>Costo</th>
+                </tr>
+                <tr>
+                    <td>Caminar por La Frontera</td>
+                    <td>Gratis</td>
+                </tr>
+                <tr>
+                    <td>Almorzar en un parador</td>
+                    <td>Pago</td>
+                </tr>
+                <tr>
+                    <td>Sandboard con alquiler de tabla</td>
+                    <td>Pago</td>
+                </tr>
+                <tr>
+                    <td>Excursión guiada en vehículo</td>
+                    <td>Pago (si está habilitada)</td>
+                </tr>
+            </table>
+        </div>
+
+        <p>
+            Ojo con el sol: en los médanos no hay sombra y la arena refleja mucho. Al mediodía es cuando más pega, así que acordate de la gorra, el protector y de llevar agua suficiente para todo el rato que vayas a estar.
+        </p>
+        <h2>Información útil</h2>
+        <section class="cajas">
+            <div class="caja">
+                <h3>Datos</h3>
+                <ul>
+                    <li><strong>Dónde:</strong> Pinamar norte, a la altura del km 386 de la Ruta 11.</li>
+                    <li><strong>Cuándo:</strong> todo el año, pero las excursiones son más en verano. Mejor no ir los
+                        días de mucho viento.</li>
+                    <li><strong>Duración:</strong> de 2 a 3 horas.</li>
+                    <li><strong>Acceso:</strong> a pie desde la playa norte.</li>
+                </ul>
+            </div>
+            <div class="caja">
+                <h3>Recomendaciones</h3>
+                <ul>
+                    <li>Si no tenés experiencia en la arena, andá con guía.</li>
+                    <li>Llevá agua, gorra y anteojos de sol.</li>
+                    <li>Movete solo por las zonas habilitadas.</li>
+                    <li>No dejes basura.</li>
+                </ul>
+            </div>
+            <div class="caja">
+                <h3>Si vas en cuatriciclo o UTV</h3>
+                <p>Cuando esté habilitado, el conductor tiene que tener:</p>
+                <ul>
+                    <li>Casco.</li>
+                    <li>Licencia específica.</li>
+                    <li>Papeles del vehículo y seguro al día.</li>
+                    <li>Una antena de dos metros con banderín.</li>
+                </ul>
+            </div>
+        </section>
+
+        <h2>Más fotos</h2>
+        <div class="galeria">
+            <img src="img/playamedanos.jpg" alt="Playa con médanos y nubes de tormenta" class="foto">
+            <img src="img/solmedanos.jpg" alt="El sol bajando sobre los médanos" class="foto">
+            <img src="img/bajadaplaya.jpg" alt="Bajada a la playa con plantas y un cartel" class="foto">
+            <img src="img/entremedanos.jpg" alt="El mar visto entre dos médanos" class="foto">
+            <img src="img/playasol.jpg" alt="La playa con el sol de frente" class="foto">
+            <img src="img/medanos.jpg" alt="Arena de los médanos con el cielo despejado" class="foto">
+        </div>
+
+        <h2>Dónde queda</h2>
+        <div id="mapa" data-parada="2"></div>
+        <p class="nota">Ubicación aproximada.</p>
+
+        <p class="mt-8">
+            Después de tanta arena, el recorrido baja hacia el bosque, que es justamente donde los médanos se
+            convirtieron en ciudad. ¿Te animás al sandboard?
+            <a href="index.html?paquete=sandboard#reserva" class="ver-mas">Reservalo acá</a>.
+        </p>
+
+        <div class="anterior-siguiente">
+            <a href="manana.html" class="inline-block border-2 border-solid border-primario text-primario font-semibold px-6 py-3 hover:bg-primario hover:text-white no-underline">Anterior: Mañana</a>
+            <a href="atardecer.html" class="inline-block bg-terciario text-primario font-semibold px-6 py-3 hover:bg-primario hover:text-white no-underline">Siguiente: Atardecer</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Pina Experience - Grupo 7 - Diseño y Desarrollo Web 2026</p>
+        <p>Página de la parada 2: Luciano Chávez</p>
+        <p><a href="index.html#ayuda">¿Necesitás ayuda?</a> - <a href="index.html#contacto">Escribinos</a></p>
+        <p class="marca">Pina Experience</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
