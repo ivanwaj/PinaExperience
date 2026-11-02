@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noche - Pina Experience</title>
+    <link rel="icon" type="image/jpeg" href="img/logo.jpg">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            corePlugins: { preflight: false },
+            theme: {
+                extend: {
+                    colors: {
+                        primario: "var(--pino)",
+                        secundario: "var(--verde)",
+                        terciario: "var(--lima)"
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="contenedor">
+            <a href="index.html"><img src="img/logo.jpg" alt="Logo de Pina Experience" class="logo"></a>
+            <nav>
+                <button type="button" id="boton-menu" aria-expanded="false" aria-controls="menu" class="md:hidden cursor-pointer px-4 py-2 font-semibold text-base text-primario bg-transparent border-2 border-solid border-primario">Menú</button>
+                <ul id="menu" class="menu flex hidden md:flex">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="manana.html">Mañana</a></li>
+                    <li><a href="mediodia.html">Mediodía</a></li>
+                    <li><a href="atardecer.html">Atardecer</a></li>
+                    <li><a href="noche.html" class="actual">Noche</a></li>
+                    <li><a href="index.html#reserva">Reservar</a></li>
+                    <li><a href="index.html#ayuda">Contacto/Ayuda</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="secciones">
+        <h1>Noche</h1>
+        <p class="momento">Parada 4: la Av. Bunge</p>
+
+        <section class="intro-parada">
+            <div class="introduccion">
+                <p>
+                    Cuando se hace de noche, el centro de Pinamar se llena de gente. En verano todo arranca tarde: la cena empieza alrededor de las 21 h y la salida sigue hasta la madrugada. Fuera de temporada es más tranquilo, pero siempre hay algún lugar abierto.
+                </p>
+                <p>
+                    Es la parte del día donde más se nota la diferencia entre ir en familia o con amigos. Para cerrar el recorrido elegimos la Av. Bunge, la avenida principal de la ciudad, donde están casi todos los restaurantes, heladerías y bares.
+                </p>
+            </div>
+            <div class="caja resumen-parada">
+                <h3>En esta parada</h3>
+                <ul>
+                    <li><strong>Horario sugerido:</strong> desde las 21 h</li>
+                    <li><strong>Duración:</strong> de 2 horas a toda la noche</li>
+                    <li><strong>Costo:</strong> depende de lo que hagas</li>
+                    <li><strong>Para quién:</strong> familias y grupos de amigos</li>
+                    <li><strong>Qué llevar:</strong> el DNI, abrigo y plata para el taxi</li>
+                </ul>
+            </div>
+        </section>
+
+        <article>
+            <img src="img/avenidanoche.jpg" alt="La avenida al anochecer, con los faroles prendidos y la luna arriba de los árboles" class="foto">
+            <div class="parrafo">
+                <p>
+                    El día se cierra en la Av. Bunge, la avenida principal de Pinamar, donde están casi todos los
+                    negocios y restaurantes. Cuando baja el sol se llenan los bares con mesas en la vereda y la
+                    avenida pasa a ser el punto de encuentro de todos.
+                </p>
+                <p>
+                    La noche tiene dos caras. Para las familias: cenar, tomar un helado y pasear. Para los más
+                    jóvenes: bares, paradores y boliche.
+                </p>
+                <p>
+                    Para cenar hay de todo: pastas, parrilla, pescados y comida de otros países. En temporada conviene reservar o ir temprano, porque a partir de las diez y media cuesta conseguir mesa.
+                </p>
+                <p>
+                    Después de cenar, lo clásico es tomar un helado y caminar por la avenida mirando los negocios. Los más jóvenes arrancan en algún bar o cervecería, siguen en los paradores con DJ y terminan en el boliche.
+                </p>
+            </div>
+        </article>
+
+        <p>
+            En verano la avenida está llena desde temprano. Muchos llegan directo de la playa a tomar algo y se quedan hasta la cena. Los fines de semana hay todavía más gente, así que si querés comer en un lugar en particular, es mejor reservar.
+        </p>
+        <p>
+            Fuera de temporada la noche es mucho más tranquila: hay menos lugares abiertos, pero la avenida igual se puede recorrer y siempre hay algún restaurante para cenar.
+        </p>
+
+        <div class="dato">
+            <p>La Albúfera fue la primera cervecería artesanal hecha en Pinamar.</p>
+        </div>
+        <h2>Qué hacer</h2>
+        <div class="flex flex-wrap gap-3">
+            <button id="boton-familia" class="pestana elegido font-semibold px-6 py-3 cursor-pointer text-base">En familia</button>
+            <button id="boton-amigos" class="pestana font-semibold px-6 py-3 cursor-pointer text-base">Con amigos</button>
+        </div>
+
+        <div id="familia" class="cajas actividades mostrar mt-6">
+            <div class="caja">
+                <h3>Cenar en la avenida</h3>
+                <p>Hay pastas, parrilla, pescados y comida de otros países. En temporada conviene reservar.</p>
+            </div>
+            <div class="caja">
+                <h3>Helado y paseo</h3>
+                <p>Después de cenar, un helado y una vuelta por los negocios de la avenida.</p>
+            </div>
+        </div>
+
+        <div id="amigos" class="cajas actividades mt-6">
+            <div class="caja">
+                <h3>Bares y cervecerías</h3>
+                <p>
+                    Uno de los más conocidos es La Albúfera, que fue la primera cervecería artesanal hecha en
+                    Pinamar.
+                </p>
+            </div>
+            <div class="caja">
+                <h3>Paradores</h3>
+                <p>De noche varios paradores se transforman en beach clubs con DJ hasta la madrugada.</p>
+            </div>
+            <div class="caja">
+                <h3>Boliche</h3>
+                <p>Para terminar la noche. Abren a la madrugada y piden ser mayor de edad.</p>
+            </div>
+        </div>
+
+        <h2>Así es una noche en Pinamar</h2>
+        <p>Más o menos así se mueve la noche en temporada. Los lugares que abren cambian cada año.</p>
+        <div class="tabla">
+            <table>
+                <tr>
+                    <th>Hora</th>
+                    <th>Qué pasa</th>
+                </tr>
+                <tr>
+                    <td>21 h</td>
+                    <td>Empiezan las cenas.</td>
+                </tr>
+                <tr>
+                    <td>23 h</td>
+                    <td>Helado, paseo y los bares llenos.</td>
+                </tr>
+                <tr>
+                    <td>Después de las 0 h</td>
+                    <td>Los paradores con DJ.</td>
+                </tr>
+                <tr>
+                    <td>Madrugada</td>
+                    <td>Abren los boliches.</td>
+                </tr>
+            </table>
+        </div>
+
+        <article class="invertido mt-8">
+            <img src="img/esculturanoche.jpg" alt="La escultura Dibujando Espacios de noche, iluminada y con la luna de fondo" class="foto !h-[26rem] md:!h-[32rem] !object-[center_25%]">
+            <div class="parrafo">
+                <h3>La foto del final</h3>
+                <p>
+                    Para cerrar el recorrido, te recomendamos sacarte una foto en la escultura "Dibujando Espacios",
+                    que está frente al mar en Av. Bunge y Av. del Mar. Es el mismo lugar donde empezó el día a la
+                    mañana.
+                </p>
+                <p>
+                    La escultura está justo donde termina la Av. Bunge y empieza la playa, así que es fácil de encontrar. De noche el lugar está tranquilo y se escucha el mar, un buen contraste después del movimiento de la avenida.
+                </p>
+                <p>
+                    Nos gustó la idea de terminar acá porque cierra el círculo: el día empezó frente al mar con el surf y el paseo costero, y termina en el mismo lugar, pero con otra luz y otro ritmo.
+                </p>
+                <p>
+                    Si vas en grupo, es el lugar ideal para la última foto de todos juntos antes de volver o de seguir la noche.
+                </p>
+            </div>
+        </article>
+
+        <p>
+            Si vas con amigos, tené en cuenta que la noche en Pinamar arranca tarde. Los paradores se llenan después de medianoche y los boliches abren recién a la madrugada, así que no hace falta apurarse con la cena.
+        </p>
+        <h2>Información útil</h2>
+        <section class="cajas">
+            <div class="caja">
+                <h3>Datos</h3>
+                <ul>
+                    <li><strong>Dónde:</strong> Av. Bunge, desde la rotonda de Av. del Mar hacia el centro. La esquina
+                        de Bunge y Shaw es de las que más gente tiene.</li>
+                    <li><strong>Cuándo:</strong> todo el año, pero en verano hay mucho más movimiento.</li>
+                    <li><strong>Duración:</strong> desde 2 horas (cena y paseo) hasta toda la noche.</li>
+                    <li><strong>Costo:</strong> depende de lo que hagas. Caminar por la avenida no cuesta nada.</li>
+                </ul>
+            </div>
+            <div class="caja">
+                <h3>Para volver bien</h3>
+                <ul>
+                    <li>La avenida se recorre caminando. Para volver hay taxis y remises.</li>
+                    <li>A la madrugada cuesta conseguir taxi, mejor arreglar la vuelta antes.</li>
+                    <li>No manejes si tomaste alcohol.</li>
+                    <li>Cuidá tus cosas donde hay mucha gente.</li>
+                    <li>Llevá el DNI.</li>
+                </ul>
+            </div>
+        </section>
+
+        <p>
+            La vuelta es la parte que menos se piensa y la que más complica. A la madrugada hay mucha gente buscando taxi al mismo tiempo, así que lo mejor es arreglarlo antes o tener el número de alguna remisería a mano.
+        </p>
+        <h2>Más fotos</h2>
+        <p>La noche arranca cuando baja el sol en la playa, sigue con la cena y termina en los paradores con música.</p>
+        <div class="galeria">
+            <img src="img/horaazul.jpg" alt="La playa después de la puesta del sol, con el cielo azul y una luz clara en el horizonte" class="foto">
+            <img src="img/cena.jpg" alt="Plato de calamares con papas y lima en una mesa con vino y una vela" class="foto">
+            <img src="img/paradornoche.jpg" alt="Gente en un parador con luces rojas frente al mar, mientras cae la noche" class="foto !object-[center_85%]">
+        </div>
+
+        <h2>Dónde queda</h2>
+        <div id="mapa" data-parada="4"></div>
+        <p class="nota">Ubicación aproximada.</p>
+
+        <p class="mt-8">
+            Y así termina el recorrido. Si te gustó la idea, podés
+            <a href="index.html?paquete=completo#reserva" class="ver-mas">reservar el día completo</a> y hacer las
+            cuatro paradas con todo organizado.
+        </p>
+
+        <div class="anterior-siguiente">
+            <a href="atardecer.html" class="inline-block border-2 border-solid border-primario text-primario font-semibold px-6 py-3 hover:bg-primario hover:text-white no-underline">Anterior: Atardecer</a>
+            <a href="index.html" class="inline-block bg-terciario text-primario font-semibold px-6 py-3 hover:bg-primario hover:text-white no-underline">Volver al inicio</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Pina Experience - Grupo 7 - Diseño y Desarrollo Web 2026</p>
+        <p>Página de la parada 4: Joaquín Marletto</p>
+        <p><a href="index.html#ayuda">¿Necesitás ayuda?</a> - <a href="index.html#contacto">Escribinos</a></p>
+        <p class="marca">Pina Experience</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
