@@ -1,0 +1,880 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Caveat:wght@500;700&display=swap');
+
+:root {
+    --pino: #0f1f10;
+    --pino-claro: #162a17;
+    --verde: #2e6b34;
+    --lima: #c6f19d;
+    --fondo: #f1ece1;
+    --superficie: #e4dccb;
+    --blanco: #ffffff;
+    --gris: #5d6b5e;
+    --rojo: #b42318;
+
+    --fuente: 'Archivo', sans-serif;
+    --mano: 'Caveat', cursive;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--fondo);
+    margin: 0;
+    overflow-x: clip;
+    font-family: var(--fuente);
+    font-size: 1.0625rem;
+    color: var(--pino);
+}
+
+img {
+    max-width: 100%;
+}
+
+h1,
+h2 {
+    font-family: var(--fuente);
+    font-stretch: 62%;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 0.9;
+    letter-spacing: -0.01em;
+}
+
+h1 {
+    font-size: 3.2rem;
+    margin: 1rem 0;
+}
+
+h2 {
+    font-size: 2.6rem;
+    margin: 6rem 0 1rem 0;
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+
+p,
+li {
+    font-size: 1.0625rem;
+    line-height: 1.55;
+}
+
+a {
+    color: var(--verde);
+}
+
+main {
+    width: 90%;
+    max-width: 70rem;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #fdfbf7;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 70rem;
+    margin: 0 auto;
+    position: relative;
+}
+
+.logo {
+    width: 4rem;
+    display: block;
+}
+
+#boton-menu {
+    font-family: var(--fuente);
+}
+
+.menu {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: -6%;
+    width: 112%;
+    background-color: var(--pino);
+    margin: 0;
+    padding: 0.5rem 0;
+    list-style: none;
+}
+
+.menu a {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    color: var(--blanco);
+    font-weight: 500;
+}
+
+.menu a:hover {
+    color: var(--lima);
+}
+
+.actual {
+    color: var(--lima) !important;
+}
+
+.foto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--superficie);
+    border: 0.6rem solid var(--blanco);
+    border-bottom-width: 2.5rem;
+    color: var(--gris);
+    font-family: var(--mano);
+    font-size: 1.5rem;
+    text-align: center;
+    min-height: 13rem;
+    padding: 1rem;
+    width: 100%;
+    transform: rotate(-1deg);
+}
+
+.invertido .foto,
+.galeria .foto:nth-child(even) {
+    transform: rotate(1.5deg);
+}
+
+img.foto {
+    display: block;
+    padding: 0;
+    min-height: 0;
+    height: 16rem;
+    object-fit: cover;
+    object-position: center 70%;
+}
+
+.portada img.foto {
+    height: 20rem;
+}
+
+.galeria img.foto {
+    height: 14rem;
+}
+
+.portada {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    background-color: var(--pino);
+    color: var(--blanco);
+    padding: 2rem 1.5rem;
+}
+
+.portada h1 {
+    font-size: 4rem;
+}
+
+.portada .foto {
+    min-height: 40vh;
+    transform: rotate(2deg);
+}
+
+.subtitulo {
+    font-size: 1.4rem;
+    color: var(--lima);
+    font-weight: 600;
+    margin: 0;
+}
+
+.caja {
+    background-color: var(--superficie);
+    padding: 1.5rem;
+}
+
+.cajas {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.cajas .caja {
+    width: 100%;
+}
+
+.caja ul,
+.caja ol {
+    padding-left: 1.2rem;
+}
+
+.parada {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: var(--superficie);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.momento {
+    color: var(--verde);
+    font-family: var(--mano);
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.ver-mas {
+    color: var(--pino);
+    font-weight: 600;
+}
+
+.historia {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.tabla {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--blanco);
+}
+
+th {
+    background-color: var(--pino);
+    color: var(--blanco);
+    text-align: left;
+    padding: 0.7rem;
+}
+
+td {
+    padding: 0.7rem;
+    border-bottom: 1px solid var(--superficie);
+}
+
+.nota {
+    font-family: var(--mano);
+    font-size: 1.4rem;
+    color: var(--gris);
+}
+
+#mapa {
+    width: 100%;
+    height: 55vh;
+    min-height: 18rem;
+    z-index: 0;
+}
+
+.lista-mapa {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 0;
+    list-style: none;
+}
+
+.lista-mapa li {
+    background-color: var(--superficie);
+    padding: 1rem;
+}
+
+.precio {
+    font-stretch: 62%;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--verde);
+    margin: 0.5rem 0;
+}
+
+.reserva {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+form {
+    width: 100%;
+    background-color: var(--superficie);
+    padding: 1.5rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #b8c2b6;
+    background-color: var(--blanco);
+    font-size: 1rem;
+    font-family: var(--fuente);
+    margin-top: 0.3rem;
+}
+
+.check {
+    display: flex;
+    gap: 0.5rem;
+    font-weight: 400;
+}
+
+.check input {
+    width: auto;
+}
+
+.total {
+    width: 100%;
+    background-color: var(--pino);
+    color: var(--blanco);
+    padding: 1.5rem;
+    height: fit-content;
+}
+
+.total p {
+    display: flex;
+    justify-content: space-between;
+}
+
+.precio-final {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--lima);
+    padding-top: 0.5rem;
+}
+
+.error {
+    color: var(--rojo);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin: 0.3rem 0 0 0;
+}
+
+.campo-error {
+    border: 2px solid var(--rojo) !important;
+    background-color: #fdecea !important;
+}
+
+.ayuda {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--gris);
+    margin-top: 0.3rem;
+}
+
+.paso {
+    font-weight: 700;
+    color: var(--verde);
+    margin-top: 0;
+}
+
+.pasos-ayuda li {
+    margin-bottom: 0.5rem;
+}
+
+.ok {
+    background-color: var(--lima);
+    color: var(--pino);
+    padding: 1rem;
+}
+
+.oculto {
+    display: none;
+}
+
+#resumen {
+    background-color: var(--superficie);
+    border-left: 6px solid var(--pino);
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+.pregunta {
+    width: 100%;
+    text-align: left;
+    background-color: var(--superficie);
+    border: none;
+    padding: 1rem;
+    font-size: 1.0625rem;
+    font-family: var(--fuente);
+    font-weight: 600;
+    color: var(--pino);
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.pregunta:hover {
+    background-color: var(--lima);
+}
+
+.respuesta {
+    display: none;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid var(--verde);
+}
+
+.intro-parada {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.resumen-parada li {
+    margin-bottom: 0.5rem;
+}
+
+.introduccion p {
+    font-size: 1.2rem;
+}
+
+.secciones h1 {
+    margin-top: 2.5rem;
+}
+
+.secciones article {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.dato {
+    max-width: 36rem;
+    background-color: var(--lima);
+    color: var(--pino);
+    padding: 1rem 1.5rem;
+    transform: rotate(-1.5deg);
+}
+
+.dato p {
+    font-family: var(--mano);
+    font-size: 1.6rem;
+    line-height: 1.2;
+}
+
+.pestana {
+    background-color: transparent;
+    color: var(--pino);
+    border: 2px solid var(--pino);
+    font-family: var(--fuente);
+}
+
+.pestana:hover {
+    background-color: var(--superficie);
+}
+
+.pestana.elegido {
+    background-color: var(--pino);
+    color: var(--blanco);
+}
+
+.aviso {
+    max-width: 50rem;
+    background-color: #fdecea;
+    border-left: 6px solid var(--rojo);
+    padding: 1rem;
+}
+
+.actividades {
+    display: none;
+}
+
+.mostrar {
+    display: flex;
+}
+
+.linea-tiempo {
+    border-left: 4px solid var(--verde);
+    padding-left: 1.5rem;
+    list-style: none;
+}
+
+.linea-tiempo li {
+    margin-bottom: 1rem;
+}
+
+.bandera {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.4rem;
+    vertical-align: middle;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.anterior-siguiente {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    margin: 3rem 0;
+}
+
+footer {
+    background-color: var(--pino);
+    color: var(--blanco);
+    margin-top: 4rem;
+    padding: 2rem 5%;
+}
+
+footer a {
+    color: var(--lima);
+}
+
+footer p {
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+}
+
+.marca {
+    font-stretch: 62%;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 4rem !important;
+    line-height: 0.9;
+    color: var(--lima);
+    margin-top: 1.5rem !important;
+}
+
+.viaje {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.viaje-foto img.foto {
+    object-position: center 30%;
+}
+
+.viaje-info .caja {
+    margin-bottom: 1rem;
+}
+
+.viaje-info h3 {
+    margin-top: 0;
+}
+
+.emergencias {
+    background-color: var(--pino);
+    color: var(--blanco);
+    padding: 1rem 1.5rem;
+    margin: 0;
+}
+
+.seccion-clima {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--pino);
+    color: var(--blanco);
+    padding: 2rem 1.5rem;
+    margin-top: 6rem;
+}
+
+.seccion-clima h2 {
+    color: var(--lima);
+    margin-top: 0;
+}
+
+.dias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+}
+
+.seccion-clima .pestana {
+    color: var(--blanco);
+    border-color: var(--blanco);
+}
+
+.seccion-clima .pestana:hover {
+    background-color: var(--pino-claro);
+}
+
+.seccion-clima .pestana.elegido {
+    background-color: var(--lima);
+    border-color: var(--lima);
+    color: var(--pino);
+}
+
+.clima-dia {
+    background-color: var(--pino-claro);
+    padding: 1.5rem;
+}
+
+.clima-dia h3 {
+    margin-top: 0;
+}
+
+.estado-clima {
+    font-family: var(--mano);
+    font-size: 2rem;
+    color: var(--lima);
+    margin: 0;
+}
+
+.temperatura {
+    font-stretch: 62%;
+    font-weight: 800;
+    font-size: 5rem;
+    line-height: 1;
+    color: var(--lima);
+    margin: 0.5rem 0 1rem 0;
+}
+
+.datos-clima {
+    padding-left: 1.2rem;
+}
+
+.nota-clima {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.nota-clima a {
+    color: var(--lima);
+}
+
+.clima-foto img.foto {
+    transform: rotate(2deg);
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 5rem;
+    }
+
+    h2 {
+        font-size: 4rem;
+        margin-top: 8rem;
+    }
+
+    .portada h1 {
+        font-size: 7rem;
+    }
+
+    .menu {
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background-color: transparent;
+        padding: 0;
+        gap: 0.3rem;
+    }
+
+    .menu a {
+        color: var(--pino);
+        padding: 0.4rem;
+        font-size: 0.95rem;
+    }
+
+    .menu a:hover {
+        color: var(--verde);
+    }
+
+    .actual {
+        color: var(--verde) !important;
+        text-decoration: underline;
+    }
+
+    .logo {
+        width: 5rem;
+    }
+
+    .portada {
+        flex-direction: row;
+        align-items: center;
+        padding: 3rem;
+    }
+
+    .portada > div,
+    .portada > img {
+        width: 50%;
+    }
+
+    .portada img.foto {
+        height: 28rem;
+    }
+
+    .secciones article img.foto {
+        height: 22rem;
+    }
+
+    .intro-parada {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .introduccion {
+        width: 60%;
+    }
+
+    .resumen-parada {
+        width: 40%;
+    }
+
+    .historia img.foto {
+        height: 24rem;
+    }
+
+    .cajas {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .cajas .caja {
+        width: 30%;
+        flex-grow: 1;
+    }
+
+    .parada {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .parada .foto {
+        width: 35%;
+    }
+
+    .parada .texto {
+        width: 65%;
+    }
+
+    .historia {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .historia > div,
+    .historia > img {
+        width: 50%;
+    }
+
+    .lista-mapa {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .viaje {
+        flex-direction: row;
+    }
+
+    .viaje-foto {
+        position: relative;
+        width: 45%;
+    }
+
+    .viaje-foto img.foto {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+    }
+
+    .viaje-info {
+        width: 55%;
+    }
+
+    .consejos {
+        columns: 2;
+        column-gap: 2rem;
+    }
+
+    .datos-clima {
+        columns: 2;
+        column-gap: 2rem;
+    }
+
+    .seccion-clima {
+        flex-direction: row;
+        padding: 3rem;
+    }
+
+    .clima-contenido {
+        width: 60%;
+    }
+
+    .clima-foto {
+        position: relative;
+        width: 40%;
+    }
+
+    .clima-foto img.foto {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+    }
+
+    .reserva {
+        flex-direction: row;
+    }
+
+    .reserva form {
+        width: 60%;
+    }
+
+    .total {
+        width: 40%;
+        position: sticky;
+        top: 7rem;
+    }
+
+    #contacto form,
+    .preguntas {
+        width: 80%;
+    }
+
+    .secciones article {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .secciones .invertido {
+        flex-direction: row-reverse;
+    }
+
+    .secciones article .foto {
+        width: 40%;
+    }
+
+    .secciones .parrafo {
+        width: 60%;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .anterior-siguiente {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .marca {
+        font-size: 9rem !important;
+    }
+}
