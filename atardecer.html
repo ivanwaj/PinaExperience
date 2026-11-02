@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atardecer - Pina Experience</title>
+    <link rel="icon" type="image/jpeg" href="img/logo.jpg">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            corePlugins: { preflight: false },
+            theme: {
+                extend: {
+                    colors: {
+                        primario: "var(--pino)",
+                        secundario: "var(--verde)",
+                        terciario: "var(--lima)"
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="contenedor">
+            <a href="index.html"><img src="img/logo.jpg" alt="Logo de Pina Experience" class="logo"></a>
+            <nav>
+                <button type="button" id="boton-menu" aria-expanded="false" aria-controls="menu" class="md:hidden cursor-pointer px-4 py-2 font-semibold text-base text-primario bg-transparent border-2 border-solid border-primario">Menú</button>
+                <ul id="menu" class="menu flex hidden md:flex">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="manana.html">Mañana</a></li>
+                    <li><a href="mediodia.html">Mediodía</a></li>
+                    <li><a href="atardecer.html" class="actual">Atardecer</a></li>
+                    <li><a href="noche.html">Noche</a></li>
+                    <li><a href="index.html#reserva">Reservar</a></li>
+                    <li><a href="index.html#ayuda">Contacto/Ayuda</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="secciones">
+        <h1>Atardecer</h1>
+        <p class="momento">Parada 3: los bosques de Pinamar</p>
+
+        <section class="intro-parada">
+            <div class="introduccion">
+                <p>
+                    Cuando el sol empieza a bajar, Pinamar cambia de ritmo. La gente vuelve de la playa, se baña, sale a caminar o se junta a tomar unos mates. La luz se pone más naranja, el viento se calma un poco y las calles arboladas se llenan de bicis.
+                </p>
+                <p>
+                    Es el momento ideal para bajar un cambio entre el día de playa y la salida de la noche. Por eso para esta etapa elegimos el bosque, que es el lugar más tranquilo de la ciudad y uno de los que mejor cuenta su historia.
+                </p>
+            </div>
+            <div class="caja resumen-parada">
+                <h3>En esta parada</h3>
+                <ul>
+                    <li><strong>Horario sugerido:</strong> 17 a 20 h</li>
+                    <li><strong>Duración:</strong> 1 a 2 horas</li>
+                    <li><strong>Costo:</strong> gratis</li>
+                    <li><strong>Para quién:</strong> familias y los que quieren descansar</li>
+                    <li><strong>Qué llevar:</strong> repelente, el mate y zapatillas cómodas</li>
+                </ul>
+            </div>
+        </section>
+
+        <article>
+            <img src="img/caminopinos.jpg" alt="Camino de tierra entre los pinos" class="foto">
+            <div class="parrafo">
+                <p>
+                    Después de la playa y los médanos, esta parada es para descansar un poco. El bosque es parte de la
+                    identidad de Pinamar, tanto que el nombre de la ciudad sale de juntar "pino" y "mar".
+                </p>
+                <p>
+                    Lo que más nos gusta de esta parada es que es un plan tranquilo, gratis y que puede hacer
+                    cualquiera. El sendero es de material, así que también lo pueden recorrer personas con dificultades
+                    motoras.
+                </p>
+                <p>
+                    Abajo de los pinos hace más fresco y casi no se siente el viento, así que después de un día de sol es un alivio. Mucha gente va con el mate, una manta o la bici y se queda un rato largo.
+                </p>
+                <p>
+                    Además, el bosque cuenta la historia de la ciudad: todo lo que ves fue plantado a mano sobre lo que antes eran médanos. Caminar por acá es una forma de entender cómo nació Pinamar.
+                </p>
+            </div>
+        </article>
+
+        <h2>La historia del bosque</h2>
+        <p>
+            Cuando caminás entre los pinos cuesta creer que todo esto antes era arena. Así fue cómo pasó:
+        </p>
+        <ol class="linea-tiempo">
+            <li><strong>Fines de los años 30.</strong> El arquitecto Jorge Bunge imagina una ciudad balnearia que una el
+                mar con el verde.</li>
+            <li><strong>1941.</strong> Se empiezan a fijar los médanos y a plantar árboles a gran escala, con métodos
+                que nunca se habían usado en el país.</li>
+            <li><strong>14 de febrero de 1943.</strong> Se inaugura Pinamar como balneario.</li>
+            <li><strong>Hoy.</strong> Ya se plantaron más de seis millones de árboles.</li>
+        </ol>
+
+        <article class="invertido">
+            <img src="img/senderoverde.jpg" alt="Sendero con árboles cubiertos de hiedra" class="foto">
+            <div class="parrafo">
+                <h3>El sendero</h3>
+                <p>
+                    El sendero va por el Camino Parque de los Pioneros, al lado de la avenida del mismo nombre. Empieza
+                    en la escultura "La Permanencia de un Sueño", que todos conocen como La Piña, y termina en el
+                    Barrio Pioneros, al norte de la ciudad.
+                </p>
+                <p>
+                    Ida y vuelta son 9,3 km, pero es fácil y tiene salidas en el medio por si querés hacerlo más
+                    corto.
+                </p>
+                <p>
+                    El camino es plano y está marcado, así que no hay forma de perderse. Lo usan tanto los que caminan como los que andan en bici o salen a correr, por eso conviene ir por el costado y estar atento.
+                </p>
+                <p>
+                    A lo largo del recorrido hay lugares con sombra para frenar y descansar. A la tarde, con el sol bajo, la luz que entra entre los árboles hace que sea uno de los momentos más lindos para recorrerlo.
+                </p>
+            </div>
+        </article>
+
+        <p>
+            Lo que más se siente al entrar al bosque es el cambio de temperatura. Después de un día de sol en la playa, abajo de los pinos está más fresco y hay mucho menos viento. También cambia el ruido: en vez del mar se escuchan los pájaros y las bicis que pasan.
+        </p>
+        <p>
+            Nosotros recomendamos hacer el sendero a la tarde, cuando el sol ya está bajo y la luz entra entre los árboles. Si no tenés ganas de hacerlo entero, podés hacer un tramo y volver por alguna de las salidas que tiene en el medio.
+        </p>
+        <h2>Qué hacer</h2>
+        <div class="flex flex-wrap gap-3">
+            <button id="boton-familia" class="pestana elegido font-semibold px-6 py-3 cursor-pointer text-base">En familia</button>
+            <button id="boton-amigos" class="pestana font-semibold px-6 py-3 cursor-pointer text-base">Con amigos</button>
+        </div>
+
+        <div id="familia" class="cajas actividades mostrar mt-6">
+            <div class="caja">
+                <h3>Paseo a pie o en bici</h3>
+                <p>Se puede hacer el sendero completo o solo un pedazo, como más les guste.</p>
+            </div>
+            <div class="caja">
+                <h3>Picnic y mates</h3>
+                <p>Llevar algo para comer y sentarse un rato abajo de los pinos.</p>
+            </div>
+            <div class="caja">
+                <h3>Ir a merendar</h3>
+                <p>Al terminar el paseo, merendar en algún lugar del centro antes de la noche.</p>
+            </div>
+        </div>
+
+        <div id="amigos" class="cajas actividades mt-6">
+            <div class="caja">
+                <h3>Salir a correr</h3>
+                <p>Es plano y con sombra, ideal para correr un rato.</p>
+            </div>
+            <div class="caja">
+                <h3>Cabalgata</h3>
+                <p>Las cabalgatas con guía son un clásico de la zona.</p>
+            </div>
+            <div class="caja">
+                <h3>Fotos del atardecer</h3>
+                <p>A esta hora la luz entre los pinos queda muy linda.</p>
+            </div>
+        </div>
+
+        <div class="dato mt-8">
+            <p><strong>Dato:</strong> el sendero arranca sobre la Av. Bunge, así que desde acá es muy fácil seguir con la
+                última parada del día.</p>
+        </div>
+
+        <p>
+            Para cerrar la tarde, nada mejor que una merienda. En el centro hay varios lugares para tomar algo antes de que empiece la noche, y si fuiste preparado, también se puede tomar mate en el mismo bosque.
+        </p>
+        <h2>El sendero en números</h2>
+        <div class="tabla">
+            <table>
+                <tr>
+                    <th>Largo</th>
+                    <th>Dificultad</th>
+                    <th>Duración</th>
+                    <th>Costo</th>
+                    <th>Abierto</th>
+                </tr>
+                <tr>
+                    <td>9,3 km ida y vuelta</td>
+                    <td>Fácil</td>
+                    <td>1 a 2 horas</td>
+                    <td>Gratis</td>
+                    <td>Todo el año</td>
+                </tr>
+            </table>
+        </div>
+
+        <h2>Recomendaciones</h2>
+        <ul>
+            <li>Salir antes de que oscurezca, mejor ir a la tarde.</li>
+            <li>Llevar repelente, sobre todo en verano.</li>
+            <li>No dejar basura y no hacer fuego.</li>
+            <li>Tener cuidado con las bicis, porque el sendero lo usan peatones y ciclistas.</li>
+            <li>Zapatillas cómodas.</li>
+        </ul>
+
+        <p>
+            Una aclaración: el bosque está muy cuidado y es parte de la historia de la ciudad. Por eso está prohibido hacer fuego y es importante no dejar basura. Si llevás algo para comer, llevate también una bolsa para los residuos.
+        </p>
+        <h2>Más fotos</h2>
+        <div class="galeria">
+            <img src="img/bosque.jpg" alt="Los pinos vistos desde abajo" class="foto">
+            <img src="img/callearbolada.jpg" alt="Calle de tierra con pinos a los costados" class="foto">
+            <img src="img/bosquecontraluz.jpg" alt="El bosque a contraluz al atardecer" class="foto">
+            <img src="img/caminobosque.jpg" alt="Camino angosto en el medio del bosque" class="foto">
+            <img src="img/solentrepinos.jpg" alt="El sol bajando entre los pinos" class="foto">
+            <img src="img/parquepinos.jpg" alt="Parque con pasto y pinos" class="foto">
+        </div>
+
+        <h2>Dónde queda</h2>
+        <div id="mapa" data-parada="3"></div>
+        <p class="nota">Ubicación aproximada.</p>
+
+        <p class="mt-8">
+            Desde el bosque se sigue por la Av. Bunge, la avenida que lleva el nombre del fundador, hacia el centro y
+            el mar. Si querés hacer la cabalgata, la podés
+            <a href="index.html?paquete=cabalgata#reserva" class="ver-mas">reservar desde acá</a>.
+        </p>
+
+        <div class="anterior-siguiente">
+            <a href="mediodia.html" class="inline-block border-2 border-solid border-primario text-primario font-semibold px-6 py-3 hover:bg-primario hover:text-white no-underline">Anterior: Mediodía</a>
+            <a href="noche.html" class="inline-block bg-terciario text-primario font-semibold px-6 py-3 hover:bg-primario hover:text-white no-underline">Siguiente: Noche</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Pina Experience - Grupo 7 - Diseño y Desarrollo Web 2026</p>
+        <p>Página de la parada 3: Joaquín Goñi</p>
+        <p><a href="index.html#ayuda">¿Necesitás ayuda?</a> - <a href="index.html#contacto">Escribinos</a></p>
+        <p class="marca">Pina Experience</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
