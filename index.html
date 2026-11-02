@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pina Experience</title>
+    <link rel="icon" type="image/jpeg" href="img/logo.jpg">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            corePlugins: { preflight: false },
+            theme: {
+                extend: {
+                    colors: {
+                        primario: "var(--pino)",
+                        secundario: "var(--verde)",
+                        terciario: "var(--lima)"
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="contenedor">
+            <a href="index.html"><img src="img/logo.jpg" alt="Logo de Pina Experience" class="logo"></a>
+            <nav>
+                <button type="button" id="boton-menu" aria-expanded="false" aria-controls="menu" class="md:hidden cursor-pointer px-4 py-2 font-semibold text-base text-primario bg-transparent border-2 border-solid border-primario">Menú</button>
+                <ul id="menu" class="menu flex hidden md:flex">
+                    <li><a href="index.html" class="actual">Inicio</a></li>
+                    <li><a href="manana.html">Mañana</a></li>
+                    <li><a href="mediodia.html">Mediodía</a></li>
+                    <li><a href="atardecer.html">Atardecer</a></li>
+                    <li><a href="noche.html">Noche</a></li>
+                    <li><a href="#reserva">Reservar</a></li>
+                    <li><a href="#ayuda">Contacto/Ayuda</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="portada">
+            <div>
+                <h1>Pina Experience</h1>
+                <p class="subtitulo">Un recorrido de un día por Pinamar, en la Costa Atlántica</p>
+                <p>
+                    La idea es simple: pasar un día entero en Pinamar y aprovecharlo de punta a punta. Arrancás
+                    temprano en el mar, al mediodía te vas a los médanos, a la tarde caminás por el bosque y a la
+                    noche terminás en la Av. Bunge.
+                </p>
+                <p>
+                    Armamos el recorrido pensando en la gente que va por primera vez y no sabe bien qué hacer.
+                    Cada parada tiene su página con lo que hay que saber antes de ir.
+                </p>
+                <a href="#paradas" class="inline-block mt-4 bg-terciario text-primario font-semibold px-6 py-3 hover:bg-primario hover:text-white no-underline">Empezar el recorrido</a>
+            </div>
+            <img src="img/muelle.jpg" alt="El muelle de Pinamar con el mar de fondo" class="foto">
+        </section>
+
+        <h2>¿Qué es Pina Experience?</h2>
+        <p>
+            Es un recorrido por Pinamar ordenado según el momento del día: mañana, mediodía, atardecer y noche.
+            No es una lista de lugares para ver, es un plan para seguir en orden. Igual no hace falta hacerlo
+            entero, cada uno puede elegir las paradas que más le gusten.
+        </p>
+        <p>
+            Está pensado para familias con chicos y para grupos de amigos de entre 16 y 30 años. Por eso en cada
+            parada hay dos opciones: una "En familia" y otra "Con amigos". El
+            lugar es el mismo, lo que cambia es qué hacer ahí.
+        </p>
+        <p>
+            Nuestro objetivo es que el que llega a Pinamar tenga toda la información junta: dónde queda cada
+            lugar, cuánto tiempo lleva, cuánto cuesta y qué conviene llevar.
+        </p>
+
+        <h2>Un poco de historia</h2>
+        <section class="historia">
+            <img src="img/medanosnubes.jpg" alt="Médanos con vegetación y el cielo nublado" class="foto">
+            <div>
+                <p>
+                    Donde hoy está Pinamar antes había solo médanos. A fines de los años 30 el arquitecto Jorge Bunge
+                    pensó en hacer una ciudad balnearia que juntara el mar con el verde, y en 1941 empezaron a fijar
+                    los médanos y a plantar árboles. Nunca se había hecho algo así en Argentina.
+                </p>
+                <p>
+                    La ciudad se inauguró el 14 de febrero de 1943. Desde ese año se plantaron más de seis millones de
+                    árboles, y de ahí viene el nombre: <strong>pino + mar</strong>.
+                </p>
+                <p>
+                    Hoy el partido de Pinamar tiene cuatro localidades: Pinamar, Ostende, Valeria del Mar y Cariló.
+                    Está a unos 340 km de la Ciudad de Buenos Aires.
+                </p>
+            </div>
+        </section>
+
+        <p>
+            Los médanos que se fijaron en esa época son los mismos que hoy se ven en La Frontera, al norte. Ahí todavía se puede ver cómo era el paisaje antes de que existiera la ciudad.
+        </p>
+        <h2 id="paradas">Las 4 paradas</h2>
+        <p>
+            El recorrido sigue el orden del día. Cada parada tiene su página con más información, fotos, un mapa y lo que hay que llevar. Si solo te interesa una, podés ir directo a esa.
+        </p>
+
+        <article class="parada">
+            <img src="img/casillaguardavidas.jpg" alt="Casilla de guardavidas en la playa a la mañana" class="foto">
+            <div class="texto">
+                <p class="momento">Parada 1 - Mañana</p>
+                <h3>El mar</h3>
+                <p>
+                    A la mañana la playa está más tranquila y el agua más calma, así que es el mejor momento para
+                    tomar una clase de surf. No hace falta saber nada, hay clases para todas las edades. Si no te
+                    querés meter al agua, podés caminar por la costa hasta el muelle.
+                </p>
+                <a href="manana.html" class="ver-mas">Ver más sobre la mañana</a>
+            </div>
+        </article>
+
+        <article class="parada">
+            <img src="img/medanos.jpg" alt="Médanos de arena bajo el cielo azul" class="foto">
+            <div class="texto">
+                <p class="momento">Parada 2 - Mediodía</p>
+                <h3>Paradores y La Frontera</h3>
+                <p>
+                    Primero a comer a algún parador de la playa y después a La Frontera, al norte de la ciudad, donde
+                    hay médanos de hasta 40 metros. Es la parte del día con más adrenalina: se puede hacer sandboard o
+                    subir caminando para ver todo desde arriba.
+                </p>
+                <a href="mediodia.html" class="ver-mas">Ver más sobre el mediodía</a>
+            </div>
+        </article>
+
+        <article class="parada">
+            <img src="img/senderopinos.jpg" alt="Sendero de tierra entre los pinos" class="foto">
+            <div class="texto">
+                <p class="momento">Parada 3 - Atardecer</p>
+                <h3>El bosque</h3>
+                <p>
+                    Para bajar un cambio después de los médanos. El sendero del Camino Parque de los Pioneros va entre
+                    los pinos y se puede hacer caminando, en bici o corriendo. Es gratis y es accesible.
+                </p>
+                <a href="atardecer.html" class="ver-mas">Ver más sobre el atardecer</a>
+            </div>
+        </article>
+
+        <article class="parada">
+            <img src="img/atardecervioleta.jpg" alt="Atardecer naranja y violeta con árboles a contraluz" class="foto">
+            <div class="texto">
+                <p class="momento">Parada 4 - Noche</p>
+                <h3>Av. Bunge</h3>
+                <p>
+                    El día termina en la avenida principal. Para las familias: cena, helado y paseo. Para los más
+                    jóvenes: bares, paradores con DJ y después el boliche.
+                </p>
+                <a href="noche.html" class="ver-mas">Ver más sobre la noche</a>
+            </div>
+        </article>
+
+        <p>
+            Un consejo: no quieras hacer todo. Si el día está lindo, quedate más tiempo en la playa o en los médanos y acortá el bosque. Si está nublado, el bosque y la avenida se disfrutan igual. La idea es pasarla bien, no cumplir con una lista.
+        </p>
+        <h2>Cómo organizar el día</h2>
+        <p>Esta es la forma en que lo haríamos nosotros. Los horarios son aproximados.</p>
+        <div class="tabla">
+            <table>
+                <tr>
+                    <th>Horario</th>
+                    <th>Parada</th>
+                    <th>Lugar</th>
+                    <th>Cuánto dura</th>
+                    <th>Costo</th>
+                </tr>
+                <tr>
+                    <td>9 a 12 h</td>
+                    <td>Mañana</td>
+                    <td>Playa y paseo costero</td>
+                    <td>2 a 3 h</td>
+                    <td>Playa gratis, clases pagas</td>
+                </tr>
+                <tr>
+                    <td>12 a 16 h</td>
+                    <td>Mediodía</td>
+                    <td>Paradores y La Frontera</td>
+                    <td>2 a 3 h</td>
+                    <td>Caminar gratis, sandboard pago</td>
+                </tr>
+                <tr>
+                    <td>17 a 20 h</td>
+                    <td>Atardecer</td>
+                    <td>Camino Parque de los Pioneros</td>
+                    <td>1 a 2 h</td>
+                    <td>Gratis</td>
+                </tr>
+                <tr>
+                    <td>Desde las 21 h</td>
+                    <td>Noche</td>
+                    <td>Av. Bunge</td>
+                    <td>De 2 h a toda la noche</td>
+                    <td>Depende de lo que hagas</td>
+                </tr>
+            </table>
+        </div>
+        <p>Si vas con chicos, lo más probable es que la noche termine temprano, después del helado. No pasa nada, el recorrido se adapta.</p>
+
+        <h2 id="mapa-recorrido">Mapa del recorrido</h2>
+        <p>Los números son el orden de las paradas y las ubicaciones son aproximadas. Si tocás un marcador te dice qué lugar es.</p>
+        <div id="mapa"></div>
+        <ol class="lista-mapa">
+            <li><strong>1. Mañana:</strong> playa de Av. Bunge y Av. del Mar. <a href="manana.html" class="ver-mas">Ir</a></li>
+            <li><strong>2. Mediodía:</strong> médanos de La Frontera, Ruta 11 km 386. <a href="mediodia.html" class="ver-mas">Ir</a></li>
+            <li><strong>3. Atardecer:</strong> Camino Parque de los Pioneros. <a href="atardecer.html" class="ver-mas">Ir</a></li>
+            <li><strong>4. Noche:</strong> Av. Bunge y Shaw. <a href="noche.html" class="ver-mas">Ir</a></li>
+        </ol>
+        <p>Todas las paradas menos La Frontera quedan cerca del centro y se pueden hacer caminando.</p>
+
+        <p>
+            Para moverse entre paradas, lo más cómodo es tener auto, sobre todo para ir y volver de La Frontera. El resto se puede hacer caminando o en bici, que en Pinamar es muy común.
+        </p>
+        <h2>Antes de viajar</h2>
+        <section class="viaje">
+            <div class="viaje-foto">
+                <img src="img/enlaruta.jpg" alt="Viajando en auto por la playa hacia los médanos" class="foto">
+            </div>
+            <div class="viaje-info">
+                <div class="caja">
+                    <h3>Cómo llegar</h3>
+                    <p>
+                        En auto se va por la Ruta 2 y después por la Ruta 11 o la 74. Son más o menos 4 horas desde
+                        Buenos Aires. También hay micros que salen desde Retiro.
+                    </p>
+                    <p>
+                        Ya en Pinamar, el centro, la playa y la avenida se hacen caminando. Para La Frontera (está a
+                        casi 8 km del centro) conviene ir en auto.
+                    </p>
+                </div>
+                <div class="caja">
+                    <h3>Cuándo ir</h3>
+                    <p>
+                        Lo mejor es en verano, de diciembre a marzo, que es cuando hay clases de surf, excursiones y
+                        más movimiento de noche. El bosque y la avenida se pueden visitar todo el año.
+                    </p>
+                </div>
+                <div class="caja">
+                    <h3>Algunos consejos</h3>
+                    <ul class="consejos">
+                        <li>Protector solar, gorra y agua siempre.</li>
+                        <li>Llevá abrigo, a la mañana y a la noche refresca.</li>
+                        <li>Respetá las banderas de los guardavidas.</li>
+                        <li>No dejes basura en la playa ni en el bosque.</li>
+                        <li>Si salís de noche, llevá el DNI.</li>
+                    </ul>
+                </div>
+                <p class="emergencias"><strong>Emergencias:</strong> 911 (policía), 107 (ambulancia), 100 (bomberos).</p>
+            </div>
+        </section>
+
+        <section class="seccion-clima" id="clima">
+            <div class="clima-contenido">
+                <h2>El clima en Pinamar</h2>
+                <p>Tocá un día para ver el pronóstico y elegir cuándo hacer el recorrido.</p>
+                <div class="dias" id="dias">
+                    <p>Cargando el pronóstico...</p>
+                </div>
+                <div class="clima-dia oculto" id="clima-dia"></div>
+                <p class="nota-clima">Pronóstico de <a href="https://open-meteo.com/" target="_blank">Open-Meteo.com</a>.</p>
+            </div>
+            <div class="clima-foto">
+                <img src="img/playasol.jpg" alt="La playa de Pinamar con el sol de frente" class="foto">
+            </div>
+        </section>
+
+        <h2 id="reserva">Reservá tu experiencia</h2>
+        <p>
+            Armamos algunos paquetes con las actividades pagas del recorrido. Elegí uno, cuántos van y si querés
+            sumar algo. El total se calcula solo. Si tenés dudas, mirá <a href="#ayuda">cómo reservar</a>.
+        </p>
+        <section class="cajas">
+            <div class="caja">
+                <h3>Mañana de surf</h3>
+                <p class="precio">$32.000 por persona</p>
+                <p>Clase de una hora y media con tabla y traje incluidos.</p>
+            </div>
+            <div class="caja">
+                <h3>Sandboard</h3>
+                <p class="precio">$28.000 por persona</p>
+                <p>Alquiler de la tabla y un guía en los médanos de La Frontera.</p>
+            </div>
+            <div class="caja">
+                <h3>Cabalgata en el bosque</h3>
+                <p class="precio">$38.000 por persona</p>
+                <p>Cabalgata guiada al atardecer. No hace falta saber andar a caballo.</p>
+            </div>
+            <div class="caja">
+                <h3>Cena en Av. Bunge</h3>
+                <p class="precio">$30.000 por persona</p>
+                <p>Entrada, plato principal y postre en un restaurante de la avenida.</p>
+            </div>
+            <div class="caja">
+                <h3>Día completo</h3>
+                <p class="precio">$110.000 por persona</p>
+                <p>Las cuatro actividades juntas. Sale $18.000 menos que pagarlas por separado.</p>
+            </div>
+        </section>
+
+        <section class="reserva">
+            <form id="form-reserva" novalidate>
+                <p class="paso">Paso 1 de 2: completá tus datos</p>
+                <p class="ayuda">Todos los campos son obligatorios menos los adicionales.</p>
+
+                <label for="paquete">Paquete</label>
+                <select id="paquete" required>
+                    <option value="">Elegí un paquete</option>
+                    <option value="surf">Mañana de surf - $32.000</option>
+                    <option value="sandboard">Sandboard - $28.000</option>
+                    <option value="cabalgata">Cabalgata en el bosque - $38.000</option>
+                    <option value="cena">Cena en Av. Bunge - $30.000</option>
+                    <option value="completo">Día completo - $110.000</option>
+                </select>
+                <p class="error" id="error-paquete"></p>
+
+                <label for="personas">Cantidad de personas</label>
+                <input type="number" id="personas" value="1" min="1" max="15" required>
+                <small class="ayuda">Entre 1 y 15 personas. Si son más, escribinos por el formulario de contacto.</small>
+                <p class="error" id="error-personas"></p>
+
+                <label for="fecha">Fecha</label>
+                <input type="date" id="fecha" required>
+                <small class="ayuda">No se pueden elegir días que ya pasaron.</small>
+                <p class="error" id="error-fecha"></p>
+
+                <label>Adicionales (opcionales)</label>
+                <label class="check"><input type="checkbox" id="traslado"> Traslado entre paradas ($9.000 por persona)</label>
+                <label class="check"><input type="checkbox" id="fotos"> Sesión de fotos ($20.000 por grupo)</label>
+
+                <label for="nombre-reserva">Nombre y apellido</label>
+                <input type="text" id="nombre-reserva" placeholder="Ej: Juan Pérez" required>
+                <p class="error" id="error-nombre-reserva"></p>
+
+                <label for="email-reserva">Email</label>
+                <input type="email" id="email-reserva" placeholder="Ej: juan@gmail.com" required>
+                <small class="ayuda">Te mandamos la confirmación a este mail.</small>
+                <p class="error" id="error-email-reserva"></p>
+
+                <p class="aviso oculto" id="error-reserva"></p>
+                <div class="flex flex-wrap gap-3 mt-4">
+                    <button type="submit" class="bg-terciario text-primario font-semibold px-6 py-3 hover:bg-primario hover:text-white border-0 cursor-pointer text-base">Ver resumen</button>
+                    <button type="reset" class="bg-white text-primario font-semibold px-6 py-3 border-2 border-solid border-primario cursor-pointer text-base">Borrar todo</button>
+                </div>
+            </form>
+
+            <div class="total">
+                <h3>Total</h3>
+                <p>Precio por persona: <span id="precio-unitario">$0</span></p>
+                <p>Subtotal: <span id="subtotal">$0</span></p>
+                <p>Adicionales: <span id="extras">$0</span></p>
+                <p class="precio-final">Total: <span id="total">$0</span></p>
+                <p class="text-sm">Precios en pesos argentinos. Es una simulación, no se cobra nada.</p>
+            </div>
+        </section>
+
+        <div id="resumen" class="oculto">
+            <p class="paso">Paso 2 de 2: revisá y confirmá</p>
+            <p>Fijate que esté todo bien. Si querés corregir algo, tocá "Cambiar datos".</p>
+            <p id="texto-resumen"></p>
+            <button id="confirmar" class="bg-terciario text-primario font-semibold px-6 py-3 hover:bg-primario hover:text-white border-0 cursor-pointer text-base">Confirmar</button>
+            <button id="cancelar" class="bg-white text-primario font-semibold px-6 py-3 border-2 border-solid border-primario cursor-pointer text-base">Cambiar datos</button>
+        </div>
+
+        <p id="mensaje-reserva" class="ok oculto mt-4"></p>
+
+        <h2 id="ayuda">¿Necesitás ayuda?</h2>
+        <p>Si es la primera vez que reservás, acá te explicamos cómo hacerlo paso a paso.</p>
+        <section class="cajas">
+            <div class="caja">
+                <h3>Cómo reservar</h3>
+                <ol class="pasos-ayuda">
+                    <li>Elegí un paquete. El precio por persona aparece al lado del nombre.</li>
+                    <li>Poné cuántos van y qué día. El total se va calculando solo a la derecha.</li>
+                    <li>Si querés, sumá el traslado o la sesión de fotos.</li>
+                    <li>Completá tu nombre y tu mail y tocá "Ver resumen".</li>
+                    <li>Revisá que esté todo bien y tocá "Confirmar". Si algo está mal, tocá "Cambiar datos".</li>
+                </ol>
+            </div>
+            <div class="caja">
+                <h3>Si algo sale mal</h3>
+                <ul>
+                    <li>Si te falta un dato o hay uno mal, el campo se pone rojo y abajo te dice cómo arreglarlo.</li>
+                    <li>Con "Borrar todo" empezás de cero.</li>
+                    <li>Si son más de 15 personas, escribinos desde el <a href="#contacto">formulario de contacto</a>.</li>
+                </ul>
+            </div>
+            <div class="caja">
+                <h3>¿Otra duda?</h3>
+                <p>Mirá las preguntas frecuentes de acá abajo. Si no está tu respuesta, mandanos un mensaje desde
+                    <a href="#contacto">Contacto</a> y te respondemos en uno o dos días hábiles.</p>
+            </div>
+        </section>
+
+        <h2>Preguntas frecuentes</h2>
+        <section class="preguntas">
+            <button class="pregunta">¿Tengo que saber surfear?</button>
+            <p class="respuesta">No, hay clases para principiantes de todas las edades y el equipo está incluido.</p>
+
+            <button class="pregunta">¿Hay que hacer las 4 paradas?</button>
+            <p class="respuesta">No, es una sugerencia. Podés hacer solo las que te interesen o repartirlas en varios días.</p>
+
+            <button class="pregunta">¿Se puede ir con chicos?</button>
+            <p class="respuesta">Sí, todas las paradas tienen una opción para ir en familia.</p>
+
+            <button class="pregunta">¿Se puede andar en cuatriciclo por los médanos?</button>
+            <p class="respuesta">
+                Por ahora no. Desde febrero de 2026 los vehículos están prohibidos por una medida judicial. Antes de
+                ir conviene preguntar en la Secretaría de Turismo si ya los habilitaron.
+            </p>
+
+            <button class="pregunta">¿Qué cosas son gratis?</button>
+            <p class="respuesta">La playa, el paseo costero, caminar por los médanos, el bosque y pasear por la avenida.</p>
+
+            <button class="pregunta">¿Qué pasa si llueve?</button>
+            <p class="respuesta">La playa y los médanos dependen mucho del clima. Si el día está feo, conviene cambiar el orden o consultar con la escuela o el guía.</p>
+
+            <button class="pregunta">¿Cómo vuelvo de noche?</button>
+            <p class="respuesta">En taxi o remís. A la madrugada tardan bastante, así que mejor pedirlo con tiempo.</p>
+
+            <button class="pregunta">¿La reserva es real?</button>
+            <p class="respuesta">No, es una simulación que hicimos para el trabajo de la facultad.</p>
+        </section>
+
+        <h2>Contacto</h2>
+        <p>Si te quedó alguna duda, escribinos.</p>
+        <section id="contacto">
+            <form id="form-contacto" novalidate>
+                <p class="ayuda">Todos los campos son obligatorios. Respondemos en uno o dos días hábiles.</p>
+
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required>
+                <p class="error" id="error-nombre"></p>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Ej: juan@gmail.com" required>
+                <small class="ayuda">Te respondemos a este mail.</small>
+                <p class="error" id="error-email"></p>
+
+                <label for="motivo">Motivo de la consulta</label>
+                <select id="motivo" required>
+                    <option value="">Elegí un motivo</option>
+                    <option value="reserva">Reservas</option>
+                    <option value="actividades">Actividades y horarios</option>
+                    <option value="grupos">Grupos de más de 15 personas</option>
+                    <option value="problema">Algo del sitio no funciona</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <p class="error" id="error-motivo"></p>
+
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" rows="5" maxlength="500" placeholder="Contanos tu consulta" required></textarea>
+                <small class="ayuda"><span id="contador">0</span> de 500 caracteres. Mínimo 10.</small>
+                <p class="error" id="error-mensaje"></p>
+
+                <p class="aviso oculto" id="error-contacto"></p>
+                <p id="mensaje-contacto" class="ok oculto"></p>
+                <div class="flex flex-wrap gap-3 mt-4">
+                    <button type="submit" class="bg-terciario text-primario font-semibold px-6 py-3 hover:bg-primario hover:text-white border-0 cursor-pointer text-base">Enviar</button>
+                    <button type="reset" class="bg-white text-primario font-semibold px-6 py-3 border-2 border-solid border-primario cursor-pointer text-base">Borrar todo</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Pina Experience - Grupo 7 - Diseño y Desarrollo Web 2026</p>
+        <p>Chávez, Goñi, Marletto y Wajnszyld</p>
+        <p><a href="index.html#ayuda">¿Necesitás ayuda?</a> - <a href="index.html#contacto">Escribinos</a></p>
+        <p class="marca">Pina Experience</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
