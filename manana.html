@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mañana - Pina Experience</title>
+    <link rel="icon" type="image/jpeg" href="img/logo.jpg">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            corePlugins: { preflight: false },
+            theme: {
+                extend: {
+                    colors: {
+                        primario: "var(--pino)",
+                        secundario: "var(--verde)",
+                        terciario: "var(--lima)"
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="contenedor">
+            <a href="index.html"><img src="img/logo.jpg" alt="Logo de Pina Experience" class="logo"></a>
+            <nav>
+                <button type="button" id="boton-menu" aria-expanded="false" aria-controls="menu" class="md:hidden cursor-pointer px-4 py-2 font-semibold text-base text-primario bg-transparent border-2 border-solid border-primario">Menú</button>
+                <ul id="menu" class="menu flex hidden md:flex">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="manana.html" class="actual">Mañana</a></li>
+                    <li><a href="mediodia.html">Mediodía</a></li>
+                    <li><a href="atardecer.html">Atardecer</a></li>
+                    <li><a href="noche.html">Noche</a></li>
+                    <li><a href="index.html#reserva">Reservar</a></li>
+                    <li><a href="index.html#ayuda">Contacto/Ayuda</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="secciones">
+        <h1>Mañana</h1>
+        <p class="momento">Parada 1: el mar</p>
+
+        <section class="intro-parada">
+            <div class="introduccion">
+                <p>
+                    La mañana en Pinamar arranca tranquila. Temprano la playa todavía está casi vacía, el mar suele estar más calmo y el aire está fresco. Es la hora de los que salen a correr por la orilla, de los que pasean al perro y de los surfistas que quieren aprovechar las primeras olas.
+                </p>
+                <p>
+                    A media mañana empieza a llegar la gente con las sombrillas y las reposeras, y los paradores abren para el desayuno. Por eso elegimos empezar el recorrido acá: el mar es, junto con los pinos, lo que más identifica a Pinamar.
+                </p>
+            </div>
+            <div class="caja resumen-parada">
+                <h3>En esta parada</h3>
+                <ul>
+                    <li><strong>Horario sugerido:</strong> 9 a 12 h</li>
+                    <li><strong>Duración:</strong> 2 a 3 horas</li>
+                    <li><strong>Costo:</strong> la playa es gratis, las clases se pagan</li>
+                    <li><strong>Para quién:</strong> familias y grupos de amigos</li>
+                    <li><strong>Qué llevar:</strong> protector solar, agua y un buzo</li>
+                </ul>
+            </div>
+        </section>
+
+        <article>
+            <img src="img/amanecermar.jpg" alt="El mar temprano a la mañana con una casilla de guardavidas" class="foto">
+            <div class="parrafo">
+                <p>
+                    El día arranca en la playa, a la hora en que está más tranquila y el agua suele estar más calma.
+                    Pinamar es uno de los lugares del país más elegidos para hacer surf y kitesurf, porque las playas
+                    son anchas, hay buenas olas y casi siempre hay viento.
+                </p>
+                <p>
+                    En todo el partido hay 12 escuelas de surf: seis en Pinamar, dos en Valeria del Mar y cuatro en
+                    Cariló. No hace falta tener experiencia, hay clases para chicos, jóvenes y adultos.
+                </p>
+                <p>
+                    Las clases se hacen en grupos chicos y siempre con un instructor al lado. Para los chicos hay clases de iniciación más cortas, en la orilla y con olas chiquitas, así que pueden aprender mientras los grandes miran desde la arena.
+                </p>
+                <p>
+                    Para los que ya saben, la mañana es el mejor momento para alquilar una tabla y salir solos. También se puede probar kitesurf o paddle surf, que aprovechan el viento que casi siempre hay en la costa.
+                </p>
+            </div>
+        </article>
+
+        <article class="invertido">
+            <img src="img/muellearena.jpg" alt="El muelle visto desde la arena" class="foto">
+            <div class="parrafo">
+                <p>
+                    Si no te querés meter al agua también está bueno. Se puede caminar por el paseo costero, que va por
+                    la playa desde Bunge y Av. del Mar hacia el sur hasta el muelle. Ahí siempre hay pescadores y es un
+                    buen lugar para sacar fotos.
+                </p>
+                <p>
+                    La caminata es tranquila y se hace descalzo por la arena húmeda, que es más firme. En el camino se pasa por varios paradores y bajadas a la playa, así que si te cansás podés frenar a tomar algo o volver por la calle.
+                </p>
+                <p>
+                    El muelle es uno de los lugares más lindos de Pinamar para ver el mar desde arriba. Desde ahí se ve toda la costa, los surfistas en el agua y, si el día está despejado, la playa hasta muy lejos.
+                </p>
+                <p>
+                    Es un plan que se puede hacer a cualquier edad y no cuesta nada, así que está bueno para combinar: mientras unos toman la clase de surf, otros pueden hacer la caminata y encontrarse después en el parador.
+                </p>
+            </div>
+        </article>
+
+        <p>
+            Algo que conviene saber: a la mañana el viento suele estar más tranquilo que a la tarde, y por eso muchas escuelas arrancan temprano. Si vas en temporada alta, también vas a encontrar la playa con menos gente y más lugar para armar la sombrilla.
+        </p>
+        <p>
+            Si nunca te subiste a una tabla, no te preocupes. La primera clase arranca en la arena: el instructor explica cómo acostarse en la tabla, cómo remar y cómo pararse. Después se entra al agua en una zona donde se hace pie y con olas chicas. Lo normal es caerse bastante las primeras veces, así que tomalo con calma.
+        </p>
+
+        <div class="dato">
+            <p>En todo el partido hay 12 escuelas de surf, así que en verano siempre hay alguna cerca.</p>
+        </div>
+        <h2>Qué hacer</h2>
+        <div class="flex flex-wrap gap-3">
+            <button id="boton-familia" class="pestana elegido font-semibold px-6 py-3 cursor-pointer text-base">En familia</button>
+            <button id="boton-amigos" class="pestana font-semibold px-6 py-3 cursor-pointer text-base">Con amigos</button>
+        </div>
+
+        <div id="familia" class="cajas actividades mostrar mt-6">
+            <div class="caja">
+                <h3>Clases para chicos</h3>
+                <p>Las escuelas tienen clases de iniciación para los más chicos, con instructor y equipo.</p>
+            </div>
+            <div class="caja">
+                <h3>Juegos y desayuno</h3>
+                <p>Jugar en la orilla y desayunar en algún parador mirando el mar.</p>
+            </div>
+        </div>
+
+        <div id="amigos" class="cajas actividades mt-6">
+            <div class="caja">
+                <h3>Surf o bodyboard</h3>
+                <p>Clases grupales, está bueno para aprender todos juntos.</p>
+            </div>
+            <div class="caja">
+                <h3>Kitesurf y paddle surf</h3>
+                <p>Aprovechando el viento que hay casi siempre en la costa.</p>
+            </div>
+            <div class="caja">
+                <h3>Alquiler de tablas</h3>
+                <p>Para los que ya saben y quieren ir por su cuenta.</p>
+            </div>
+        </div>
+
+        <h2>Escuelas de surf</h2>
+        <p>Estas son algunas de las escuelas que hay en Pinamar. Las clases se reservan por WhatsApp o por redes.</p>
+        <div class="tabla">
+            <table>
+                <tr>
+                    <th>Escuela</th>
+                    <th>Dónde está</th>
+                </tr>
+                <tr>
+                    <td>Sudestada</td>
+                    <td>Olimpo y la playa</td>
+                </tr>
+                <tr>
+                    <td>Aloha</td>
+                    <td>Céfiro y la playa</td>
+                </tr>
+                <tr>
+                    <td>Pura Vida</td>
+                    <td>Av. del Mar y Tres Carabelas</td>
+                </tr>
+            </table>
+        </div>
+
+        <p>
+            Para elegir escuela, lo más fácil es ir a la que te quede más cerca de donde te alojás. En todas el equipo está incluido en la clase, así que no hace falta llevar tabla ni traje. Si van varios, preguntá si hacen precio por grupo.
+        </p>
+        <h2>Información útil</h2>
+        <section class="cajas">
+            <div class="caja">
+                <h3>Datos</h3>
+                <ul>
+                    <li><strong>Cuándo:</strong> de diciembre a marzo, a la mañana.</li>
+                    <li><strong>Duración:</strong> de 2 a 3 horas. La clase dura entre 1 hora y 1 hora y media.</li>
+                    <li><strong>Costo:</strong> la playa y el paseo costero son gratis. Las clases se pagan y el precio
+                        depende de cada escuela.</li>
+                    <li><strong>Acceso:</strong> por las bajadas públicas a la playa.</li>
+                </ul>
+            </div>
+            <div class="caja">
+                <h3>Recomendaciones</h3>
+                <ul>
+                    <li>Usar protector solar resistente al agua.</li>
+                    <li>Si no sabés nadar bien, avisale al instructor.</li>
+                    <li>Llevar agua y un buzo, porque a la mañana el viento es fresco.</li>
+                    <li>Respetar las banderas de los guardavidas (abajo explicamos qué significan).</li>
+                </ul>
+            </div>
+        </section>
+
+        <h2>Las banderas de los guardavidas</h2>
+        <div class="tabla">
+            <table>
+                <tr>
+                    <th>Bandera</th>
+                    <th>Qué quiere decir</th>
+                </tr>
+                <tr>
+                    <td><span class="bandera" style="background-color: #2e7d32;"></span>Verde</td>
+                    <td>El mar está tranquilo.</td>
+                </tr>
+                <tr>
+                    <td><span class="bandera" style="background-color: #f2c94c;"></span>Amarilla</td>
+                    <td>Hay que tener cuidado.</td>
+                </tr>
+                <tr>
+                    <td><span class="bandera" style="background-color: #b42318;"></span>Roja</td>
+                    <td>No se puede entrar al agua.</td>
+                </tr>
+            </table>
+        </div>
+
+        <p>
+            Los guardavidas trabajan en temporada y en horario de playa. Fuera de ese horario no hay nadie cuidando el mar, así que si vas muy temprano o muy tarde, lo mejor es no meterse al agua.
+        </p>
+        <h2>Más fotos</h2>
+        <div class="galeria">
+            <img src="img/orilla.jpg" alt="Las olas llegando a la orilla" class="foto">
+            <img src="img/debajomuelle.jpg" alt="Debajo del muelle, entre los pilotes" class="foto">
+            <img src="img/vistaalmar.jpg" alt="Vista al mar desde un parador con el cielo de la mañana" class="foto">
+            <img src="img/playahuellas.jpg" alt="Playa ancha con huellas en la arena" class="foto">
+            <img src="img/atardecerplaya.jpg" alt="La playa vista desde el auto, temprano" class="foto">
+            <img src="img/playasoleada.jpg" alt="Playa con sol y el mar de fondo" class="foto">
+        </div>
+
+        <h2>Dónde queda</h2>
+        <div id="mapa" data-parada="1"></div>
+        <p class="nota">Ubicación aproximada.</p>
+
+        <p class="mt-8">
+            Después del mar, el recorrido sigue hacia el norte, donde la playa se vuelve más salvaje y aparecen los
+            médanos. Si querés tomar una clase de surf, la podés
+            <a href="index.html?paquete=surf#reserva" class="ver-mas">reservar desde acá</a>.
+        </p>
+
+        <div class="anterior-siguiente">
+            <a href="index.html" class="inline-block border-2 border-solid border-primario text-primario font-semibold px-6 py-3 hover:bg-primario hover:text-white no-underline">Volver al inicio</a>
+            <a href="mediodia.html" class="inline-block bg-terciario text-primario font-semibold px-6 py-3 hover:bg-primario hover:text-white no-underline">Siguiente: Mediodía</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Pina Experience - Grupo 7 - Diseño y Desarrollo Web 2026</p>
+        <p>Página de la parada 1: Iván Wajnszyld</p>
+        <p><a href="index.html#ayuda">¿Necesitás ayuda?</a> - <a href="index.html#contacto">Escribinos</a></p>
+        <p class="marca">Pina Experience</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
