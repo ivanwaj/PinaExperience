@@ -86,7 +86,7 @@ https://ivanwaj.github.io/PinaExperience/
 ## Enlaces al prototipo y al Design System
 
 - **Prototipo (Google Stitch):** https://stitch.withgoogle.com/preview/15906487310021627241?node-id=ce39441273b943edb35bf36e12f37d43
-- **Design System y documento de diseño (Actividad 2):** https://ivanwaj.github.io/Actividad02PinaExperience/
+- **Design System:** https://ivanwaj.github.io/Actividad02PinaExperience/
 
 
 ## Integrantes y contribuciones
