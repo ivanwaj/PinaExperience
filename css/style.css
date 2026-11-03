@@ -1,0 +1,766 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Archivo+Narrow:wght@700&family=Caveat:wght@500;700&display=swap');
+
+:root {
+    --pino: #0f1f10;
+    --pino-claro: #162a17;
+    --verde: #2e6b34;
+    --lima: #c6f19d;
+    --fondo: #f1ece1;
+    --superficie: #e4dccb;
+    --blanco: #ffffff;
+    --gris: #5d6b5e;
+    --rojo: #b42318;
+}
+
+body {
+    background-color: var(--fondo);
+    color: var(--pino);
+    font-family: 'Archivo', sans-serif;
+    font-size: 1.0625rem;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1,
+h2 {
+    font-family: 'Archivo Narrow', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 1rem 0;
+}
+
+h2 {
+    font-size: 2.4rem;
+    margin: 6rem 0 1rem 0;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin: 0.5rem 0;
+}
+
+p,
+li {
+    line-height: 1.5;
+}
+
+a {
+    color: var(--verde);
+}
+
+main {
+    width: 90%;
+    max-width: 70rem;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #fdfbf7;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 70rem;
+    margin: 0 auto;
+    position: relative;
+}
+
+.logo {
+    width: 4rem;
+    display: block;
+}
+
+.menu {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: -6%;
+    width: 112%;
+    background-color: var(--pino);
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+.menu li {
+    display: block;
+}
+
+.menu a {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    color: var(--blanco);
+    text-decoration: none;
+}
+
+.menu a:hover,
+.menu .actual {
+    color: var(--lima);
+}
+
+.foto {
+    display: block;
+    width: 94%;
+    height: 16rem;
+    object-fit: cover;
+    object-position: center 70%;
+    padding: 0.6rem 0.6rem 2.5rem 0.6rem;
+    background-color: var(--blanco);
+}
+
+.portada .foto {
+    height: 20rem;
+}
+
+.galeria .foto {
+    height: 14rem;
+}
+
+.portada {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    padding: 2rem 1.5rem;
+    background-color: var(--pino);
+    color: var(--blanco);
+}
+
+.portada h1 {
+    font-size: 2.8rem;
+}
+
+.subtitulo {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--lima);
+    margin: 0;
+}
+
+.caja {
+    background-color: var(--superficie);
+    padding: 1.5rem;
+}
+
+.cajas {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.parada {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: var(--superficie);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.momento {
+    font-family: 'Caveat', cursive;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--verde);
+    margin: 0;
+}
+
+.ver-mas {
+    color: var(--pino);
+    font-weight: 600;
+}
+
+.historia {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.tabla {
+    overflow: auto;
+}
+
+table {
+    width: 100%;
+    background-color: var(--blanco);
+}
+
+th {
+    background-color: var(--pino);
+    color: var(--blanco);
+    text-align: left;
+    padding: 0.7rem;
+}
+
+td {
+    padding: 0.7rem;
+    border-bottom: 1px solid var(--superficie);
+}
+
+.nota {
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+    color: var(--gris);
+}
+
+#mapa {
+    height: 25rem;
+    z-index: 0;
+}
+
+.lista-mapa {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0;
+}
+
+.lista-mapa li {
+    display: block;
+    background-color: var(--superficie);
+    padding: 1rem;
+}
+
+.precio {
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--verde);
+    margin: 0.5rem 0;
+}
+
+.reserva {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--superficie);
+    padding: 1.5rem;
+}
+
+label {
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+input,
+select,
+textarea {
+    padding: 0.7rem;
+    border: 1px solid #b8c2b6;
+    background-color: var(--blanco);
+    font-family: 'Archivo', sans-serif;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+}
+
+.check {
+    display: flex;
+    gap: 0.5rem;
+    font-weight: 400;
+}
+
+.total {
+    background-color: var(--pino);
+    color: var(--blanco);
+    padding: 1.5rem;
+}
+
+.total p {
+    display: flex;
+    justify-content: space-between;
+}
+
+.precio-final {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--lima);
+}
+
+.error {
+    color: var(--rojo);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin: 0.3rem 0 0 0;
+}
+
+.campo-error {
+    border: 2px solid var(--rojo);
+    background-color: #fdecea;
+}
+
+.ayuda {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--gris);
+    margin-top: 0.3rem;
+}
+
+.paso {
+    font-weight: 700;
+    color: var(--verde);
+    margin-top: 0;
+}
+
+.ok {
+    background-color: var(--lima);
+    padding: 1rem;
+}
+
+.oculto {
+    display: none;
+}
+
+#resumen {
+    background-color: var(--superficie);
+    border-left: 6px solid var(--pino);
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+.preguntas {
+    display: flex;
+    flex-direction: column;
+}
+
+.pregunta {
+    text-align: left;
+    background-color: var(--superficie);
+    border: none;
+    padding: 1rem;
+    font-family: 'Archivo', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--pino);
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.pregunta:hover {
+    background-color: var(--lima);
+}
+
+.respuesta {
+    display: none;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid var(--verde);
+}
+
+.intro-parada {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.introduccion p {
+    font-size: 1.2rem;
+}
+
+.secciones h1 {
+    margin-top: 2.5rem;
+}
+
+.secciones article {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.dato {
+    max-width: 36rem;
+    background-color: var(--lima);
+    padding: 1rem 1.5rem;
+}
+
+.dato p {
+    font-family: 'Caveat', cursive;
+    font-size: 1.6rem;
+    line-height: 1.2;
+}
+
+.pestana {
+    background-color: transparent;
+    color: var(--pino);
+    border: 2px solid var(--pino);
+    font-family: 'Archivo', sans-serif;
+}
+
+.pestana:hover {
+    background-color: var(--superficie);
+}
+
+.pestana.elegido {
+    background-color: var(--pino);
+    color: var(--blanco);
+}
+
+.aviso {
+    max-width: 50rem;
+    background-color: #fdecea;
+    border-left: 6px solid var(--rojo);
+    padding: 1rem;
+}
+
+.actividades {
+    display: none;
+}
+
+.mostrar {
+    display: flex;
+}
+
+.linea-tiempo {
+    border-left: 4px solid var(--verde);
+    padding-left: 1.5rem;
+}
+
+.linea-tiempo li {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.bandera {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.4rem;
+    vertical-align: middle;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.anterior-siguiente {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    margin: 3rem 0;
+}
+
+footer {
+    background-color: var(--pino);
+    color: var(--blanco);
+    margin-top: 4rem;
+    padding: 2rem 5%;
+}
+
+footer a {
+    color: var(--lima);
+}
+
+footer p {
+    font-size: 0.9rem;
+    margin: 0.3rem 0;
+}
+
+footer .marca {
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+    color: var(--lima);
+    margin-top: 1.5rem;
+}
+
+.viaje {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.viaje-info .caja {
+    margin-bottom: 1rem;
+}
+
+.viaje-info h3 {
+    margin-top: 0;
+}
+
+.emergencias {
+    background-color: var(--pino);
+    color: var(--blanco);
+    padding: 1rem 1.5rem;
+    margin: 0;
+}
+
+.seccion-clima {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--pino);
+    color: var(--blanco);
+    padding: 2rem 1.5rem;
+    margin-top: 6rem;
+}
+
+.seccion-clima h2 {
+    color: var(--lima);
+    margin-top: 0;
+}
+
+.dias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+}
+
+.seccion-clima .pestana {
+    color: var(--blanco);
+    border-color: var(--blanco);
+}
+
+.seccion-clima .pestana:hover {
+    background-color: var(--pino-claro);
+}
+
+.seccion-clima .pestana.elegido {
+    background-color: var(--lima);
+    border-color: var(--lima);
+    color: var(--pino);
+}
+
+.clima-dia {
+    background-color: var(--pino-claro);
+    padding: 1.5rem;
+}
+
+.clima-dia h3 {
+    margin-top: 0;
+}
+
+.estado-clima {
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
+    color: var(--lima);
+    margin: 0;
+}
+
+.temperatura {
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--lima);
+    margin: 0.5rem 0 1rem 0;
+}
+
+.nota-clima {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.nota-clima a {
+    color: var(--lima);
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 4.5rem;
+    }
+
+    h2 {
+        font-size: 3.5rem;
+        margin-top: 8rem;
+    }
+
+    .portada h1 {
+        font-size: 6rem;
+    }
+
+    .logo {
+        width: 5rem;
+    }
+
+    .menu {
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background-color: transparent;
+        padding: 0;
+        gap: 0.3rem;
+    }
+
+    .menu a {
+        color: var(--pino);
+        padding: 0.4rem;
+        font-size: 0.95rem;
+    }
+
+    .menu a:hover,
+    .menu .actual {
+        color: var(--verde);
+    }
+
+    .menu .actual {
+        text-decoration: underline;
+    }
+
+    .portada,
+    .historia,
+    .parada,
+    .intro-parada,
+    .secciones article {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .portada {
+        padding: 3rem;
+    }
+
+    .portada .foto {
+        height: 28rem;
+    }
+
+    .historia .foto {
+        height: 24rem;
+    }
+
+    .secciones article .foto {
+        height: 22rem;
+    }
+
+    .viaje-foto .foto {
+        height: 36rem;
+    }
+
+    .clima-foto .foto {
+        height: 26rem;
+    }
+
+    .portada div,
+    .portada img,
+    .historia div,
+    .historia img {
+        width: 50%;
+    }
+
+    .introduccion {
+        width: 60%;
+    }
+
+    .resumen-parada {
+        width: 40%;
+    }
+
+    .cajas {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .cajas .caja {
+        width: 30%;
+        flex-grow: 1;
+    }
+
+    .parada .foto {
+        width: 35%;
+    }
+
+    .parada .texto {
+        width: 65%;
+    }
+
+    .lista-mapa {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .viaje,
+    .seccion-clima,
+    .reserva {
+        flex-direction: row;
+    }
+
+    .viaje-foto {
+        width: 45%;
+    }
+
+    .viaje-info {
+        width: 55%;
+    }
+
+    .consejos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 2rem;
+    }
+
+    .seccion-clima {
+        padding: 3rem;
+    }
+
+    .clima-contenido {
+        width: 60%;
+    }
+
+    .clima-foto {
+        width: 40%;
+    }
+
+    .reserva form {
+        width: 60%;
+    }
+
+    .total {
+        width: 40%;
+        align-self: flex-start;
+        position: sticky;
+        top: 7rem;
+    }
+
+    #contacto form,
+    .preguntas {
+        width: 80%;
+    }
+
+    .secciones .invertido .foto {
+        order: 2;
+    }
+
+    .secciones article .foto {
+        width: 40%;
+    }
+
+    .secciones .parrafo {
+        width: 60%;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .anterior-siguiente {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    footer .marca {
+        font-size: 9rem;
+    }
+}
